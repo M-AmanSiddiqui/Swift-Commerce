@@ -1,0 +1,8 @@
+#bg-image-hero {
+    background-image: url('');
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 100vh; 
+   
+  }
