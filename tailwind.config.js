@@ -7,12 +7,10 @@ export default {
       colors: {
         customGray: '#F0F0F0',
         customGrayDark: '#9A9A9A',
-
-    
+          lightgray: '#F0EEED',
+       
       },
-      backgroundImage: {
-        'hero-bg': "url('/imges/Rectangle 2.png')",},
-
+  
   
       fontFamily: {
         satoshi: ['Satoshi', 'sans-serif'],
