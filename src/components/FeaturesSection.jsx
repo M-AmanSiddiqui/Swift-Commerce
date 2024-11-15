@@ -103,6 +103,22 @@ export default function FeaturesSection() {
     View All
   </button>
 </div>
+
+
+<br /><br />
+<div className='bg-customGray ml-14 mr-14 rounded-3xl'><h1 className='text-4xl font-extrabold font-integral text-center pt-16'>BROWSE BY DRESS STYLE</h1>\
+
+<div className='flex ml-10 gap-6 p-5  mt-4'>
+  <img src="/src/assets/images/Frame 1 (4).png" alt="" />
+  <img src="/src/assets/images/Frame 1 (3).png" alt="" />
+  </div>
+  <div className='flex ml-14 gap-6 '>
+  <img src="/src/assets/images/Frame 1 (2).png" alt="" />
+  <img src="/src/assets/images/Frame 1 (1).png" alt="" />
+  </div>
+<br /><br /><br />
+
+</div>
 </div>
 
 
