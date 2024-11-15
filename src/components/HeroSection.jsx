@@ -1,4 +1,10 @@
 import React from 'react'
+ import VERSAGE from '/src/assets/images/hero-vector-1.png';
+ import ZARA from '/src/assets/images/hero-vector-2.png';
+ import GUCCI from '/src/assets/images/hero-vector-3.png';
+ import PRADA from '/src/assets/images/hero-vector-4.png';
+ import Calvin from '/src/assets/images/hero-vector-5.png';
+
 
 export default function HeroSection() {
   return (
@@ -23,7 +29,7 @@ export default function HeroSection() {
        </div>  
   </div>
   <div className='bg-black max-w-full mt-20  flex flex-wrap gap-24 p-8  '>
-<img className='ml-10' src="/src/assets/images/hero-vector-1.png" alt="VERSAGE" /> <img src="/src/assets/images/hero-vector-2.png" alt="ZARA" /><img src="/src/assets/images/hero-vector-3.png" alt="GUCCI" /><img src="/src/assets/images/hero-vector-4.png" alt="PRADA" /><img src="/src/assets/images/hero-vector-5.png" alt="Calvin Klein" />
+<img className='ml-10' src={VERSAGE} alt="VERSAGE" /> <img src={ZARA} alt="ZARA" /><img src={GUCCI} alt="GUCCI" /><img src={PRADA} alt="PRADA" /><img src={Calvin} alt="Calvin Klein" />
 </div>
 
       </div>
