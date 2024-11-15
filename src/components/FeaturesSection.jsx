@@ -66,7 +66,7 @@ export default function FeaturesSection() {
 
 <div className='mt-12  pl-14 pr-14  '>
 <img className='rounded-lg ' src="/src/assets/images/Feature img 5.png" alt="ti-shirt" />
-<h4 className='font-bold mt-2'>T-Shirt with Tape Details</h4>
+<h4 className='font-bold mt-2'> Vertical Striped Shirt</h4>
 <p className='flex flex-wrap text-yellow-300 mt-1 '><IoIosStar /><IoIosStar /><IoIosStar /><IoIosStar /><FaStarHalf /></p>
 <h1 className='mt-2 ml-1 font-satoshi text-1xl'>$124</h1>
 </div>
@@ -74,7 +74,7 @@ export default function FeaturesSection() {
 
 <div className='mt-12  pl-14 pr-14  '>
 <img className='rounded-lg ' src="/src/assets/images/Feature img 6.png" alt="ti-shirt" />
-<h4 className='font-bold mt-2'>Skinny Fit Jeans</h4>
+<h4 className='font-bold mt-2'> Courage Graphic T-Shirt</h4>
 <p className='flex flex-wrap text-yellow-300 mt-1 '><IoIosStar /><IoIosStar /><IoIosStar /><IoIosStar /><FaStarHalf /></p>
 <h1 className='mt-2 ml-1 font-satoshi text-1xl'>$125</h1>
 </div>
@@ -82,7 +82,7 @@ export default function FeaturesSection() {
 
 <div className='mt-12  pl-14 pr-14  '>
 <img className='rounded-lg ' src="/src/assets/images/Feature img 7.png" alt="ti-shirt" />
-<h4 className='font-bold mt-2'>Checkered Shirt</h4>
+<h4 className='font-bold mt-2'>Loose Fit Bermuda Shorts</h4>
 <p className='flex flex-wrap text-yellow-300 mt-1 '><IoIosStar /><IoIosStar /><IoIosStar /><IoIosStar /><FaStarHalf /></p>
 <h1 className='mt-2 ml-1 font-satoshi text-1xl'>$126</h1>
 </div>
@@ -91,7 +91,7 @@ export default function FeaturesSection() {
 
 <div className='mt-12  pl-14 pr-14  '>
 <img className='rounded-lg ' src="/src/assets/images/Feature img 8.png" alt="ti-shirt" />
-<h4 className='font-bold mt-2'>Sleeve Striped T-shirt</h4>
+<h4 className='font-bold mt-2'>Faded Skinny Jeans</h4>
 <p className='flex flex-wrap text-yellow-300 mt-1 '><IoIosStar /><IoIosStar /><IoIosStar /><IoIosStar /><FaStarHalf /></p>
 <h1 className='mt-2 ml-1 font-satoshi text-1xl'>$127</h1>
 </div>
