@@ -29,8 +29,8 @@ export default function Header() {
           </button>
 
           {/* Logo */}
-          <div className="text-2xl lg:text-4xl font-extrabold text-black">
-            <Link to="/">SWIFT.CO</Link>
+          <div className="text-2xl lg:text-4xl font-extrabold text-logoGray ">
+            <Link to="/">SWIFT INVENTRY</Link>
           </div>
         </div>
 

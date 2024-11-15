@@ -8,6 +8,7 @@ export default {
         customGray: '#F0F0F0',
         customGrayDark: '#9A9A9A',
           lightgray: '#F0EEED',
+          logoGray: '#B9B9B9',
        
       },
   
