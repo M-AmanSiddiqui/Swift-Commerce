@@ -29,45 +29,49 @@ const AnimatedStat = ({ value, duration }) => {
 
 export default function HeroSection() {
   return (
-    <div className="bg-[url('/src/assets/images/rectangle2.png')] bg-no-repeat bg-cover w-full h-screen">
-      <h1 className="font-integral font-extrabold text-4xl sm:text-6xl px-4 sm:pl-24 pt-16 sm:pt-24">
+    <div className="bg-[url('/src/assets/images/rectangle2.png')] bg-no-repeat bg-cover w-full min-h-screen flex flex-col justify-between">
+
+    {/* Heading and Text Section */}
+    <div className="pt-16 sm:pt-24 px-4 sm:pl-12 lg:pl-24">
+      <h1 className="font-integral font-extrabold text-3xl sm:text-5xl lg:text-6xl leading-tight">
         FIND CLOTHES <br />
         THAT MATCHES <br />
         YOUR STYLE
       </h1>
-      <p className="text-customGrayDark mt-4 px-4 sm:pl-28 text-sm">
-        Browse through our diverse range of meticulously crafted garments,
-        designed <br /> to bring out your individuality and cater to your sense of
-        style.
+      <p className="text-customGrayDark mt-4 text-sm sm:text-base sm:pl-4 lg:pl-8">
+        Browse through our diverse range of meticulously crafted garments, designed <br className="hidden sm:block" />
+        to bring out your individuality and cater to your sense of style.
       </p>
-      <button className="bg-black text-white px-4 py-2 rounded-full mt-6 w-36 mx-4 sm:ml-32">
+      <button className="bg-black text-white px-6 py-3 rounded-full mt-6 w-auto sm:w-36">
         Shop Now
       </button>
-
-      {/* Stats Section */}
-      <div className="flex flex-col sm:flex-row sm:ml-24 gap-12 sm:gap-28 mt-14 font-satoshi items-center">
-        <div className="text-center">
-          <AnimatedStat value={200} duration={2000} />
-          <p className="text-customGrayDark">International Brands</p>
-        </div>
-        <div className="text-center">
-          <AnimatedStat value={2000} duration={3000} />
-          <p className="text-customGrayDark">High-Quality Products</p>
-        </div>
-        <div className="text-center">
-          <AnimatedStat value={30000} duration={4000} />
-          <p className="text-customGrayDark">Happy Customers</p>
-        </div>
+    </div>
+  
+    {/* Stats Section */}
+    <div className="flex flex-col sm:flex-row justify-center sm:justify-start sm:ml-12 lg:ml-24 gap-6 sm:gap-12 lg:gap-28 mt-14 items-center">
+      <div className="text-center">
+        <AnimatedStat value={200} duration={2000} />
+        <p className="text-customGrayDark text-sm sm:text-base">International Brands</p>
       </div>
-
-      {/* Brand Logos */}
-      <div className="bg-black max-w-full mt-20 flex flex-wrap justify-center gap-12 sm:gap-24 p-8">
-        <img className="w-14 sm:w-auto" src={VERSAGE} alt="VERSAGE" />
-        <img className="w-14 sm:w-auto" src={ZARA} alt="ZARA" />
-        <img className="w-14 sm:w-auto" src={GUCCI} alt="GUCCI" />
-        <img className="w-14 sm:w-auto" src={PRADA} alt="PRADA" />
-        <img className="w-14 sm:w-auto" src={Calvin} alt="Calvin Klein" />
+      <div className="text-center">
+        <AnimatedStat value={2000} duration={3000} />
+        <p className="text-customGrayDark text-sm sm:text-base">High-Quality Products</p>
+      </div>
+      <div className="text-center">
+        <AnimatedStat value={30000} duration={4000} />
+        <p className="text-customGrayDark text-sm sm:text-base">Happy Customers</p>
       </div>
     </div>
+  
+    {/* Brand Logos */}
+    <div className="bg-black w-full mt-20 flex flex-wrap justify-center gap-8 sm:gap-12 lg:gap-24 p-6 lg:p-8">
+      <img className="w-12 sm:w-16 lg:w-20" src={VERSAGE} alt="VERSAGE" />
+      <img className="w-12 sm:w-16 lg:w-20" src={ZARA} alt="ZARA" />
+      <img className="w-12 sm:w-16 lg:w-20" src={GUCCI} alt="GUCCI" />
+      <img className="w-12 sm:w-16 lg:w-20" src={PRADA} alt="PRADA" />
+      <img className="w-12 sm:w-16 lg:w-20" src={Calvin} alt="Calvin Klein" />
+    </div>
+  </div>
+  
   );
 }

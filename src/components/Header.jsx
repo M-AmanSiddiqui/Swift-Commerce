@@ -18,88 +18,75 @@ export default function Header() {
 
   return (
     <div className="bg-gray-100 font-sans">
-      <header className="flex items-center justify-between p-5 lg:px-10 relative">
-        {/* Toggler Icon for Menu (Aligned to Left) */}
-        <div className="flex items-center space-x-4">
-          <button
-            onClick={toggleMenu}
-            className="text-gray-600 hover:text-gray-900 lg:hidden"
-          >
-            {isMenuOpen ? <AiOutlineClose className="h-6 w-6" /> : <AiOutlineMenu className="h-6 w-6" />}
-          </button>
-
-          {/* Logo */}
-          <div className="text-2xl lg:text-4xl font-extrabold text-black ">
-            <Link to="/">SWIFT.CO</Link>
-          </div>
-        </div>
-
-        {/* Navigation Links */}
-        <nav
-          className={`${
-            isMenuOpen ? 'flex' : 'hidden'
-          } lg:flex flex-col lg:flex-row lg:space-x-8 text-gray-700 hover:text-gray-900 font-medium absolute lg:static top-16 lg:top-0 left-0 w-full lg:w-auto bg-gray-100 lg:bg-transparent lg:p-0 p-4 shadow-lg lg:shadow-none z-10`}
+    <header className="flex items-center justify-between p-4 lg:px-10 relative">
+      {/* Left Section: Menu Icon and Logo */}
+      <div className="flex items-center space-x-4">
+        {/* Menu Icon for Mobile */}
+        <button
+          onClick={toggleMenu}
+          className="text-gray-600 hover:text-gray-900 lg:hidden focus:outline-none"
         >
-          <Link
-            to="/shop"
-            className="hover:text-gray-900 p-2 lg:p-0"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Product
-          </Link>
-          <Link
-            to="/on-sale"
-            className="hover:text-gray-900 p-2 lg:p-0"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            On Sale
-          </Link>
-          <Link
-            to="/new-arrivals"
-            className="hover:text-gray-900 p-2 lg:p-0"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            New Arrivals
-          </Link>
-          <Link
-            to="/brands"
-            className="hover:text-gray-900 p-2 lg:p-0"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Brands
-          </Link>
-        </nav>
+          {isMenuOpen ? (
+            <AiOutlineClose className="h-6 w-6" />
+          ) : (
+            <AiOutlineMenu className="h-6 w-6" />
+          )}
+        </button>
 
-        {/* Icons Section */}
-        <div className="flex items-center space-x-4">
-          {/* Search Icon and Input */}
-          <div className="relative flex items-center">
-            <button
-              onClick={toggleSearch}
-              className="text-gray-600 hover:text-gray-900"
-            >
-              <AiOutlineSearch className="h-6 w-6" />
-            </button>
-            {isSearchOpen && (
-              <input
-                type="text"
-                placeholder="Search for products..."
-                className="absolute top-12  lg:top-0 left-0 lg:left-auto lg:relative px-4 py-2 bg-gray-100 rounded-3xl border border-gray-300 focus:outline-none focus:border-gray-500 w-30 lg:w-96 transition-all duration-300"
-              />
-            )}
-          </div>
-
-          {/* Cart Icon */}
-          <button className="text-gray-600 hover:text-gray-900">
-            <IoCartOutline className="h-6 w-6" />
-          </button>
-
-          {/* User Icon */}
-          <button className="text-gray-600 hover:text-gray-900">
-            <AiOutlineUser className="h-6 w-6" />
-          </button>
+        {/* Logo */}
+        <div className="text-2xl lg:text-4xl font-extrabold text-black">
+          <Link to="/">SWIFT.CO</Link>
         </div>
-      </header>
-    </div>
+      </div>
+
+      {/* Center Section: Navigation Links */}
+      <nav
+        className={`${
+          isMenuOpen ? "block" : "hidden"
+        } lg:flex flex-col lg:flex-row lg:space-x-8 absolute lg:static top-16 lg:top-0 left-0 w-full lg:w-auto bg-gray-100 lg:bg-transparent lg:p-0 p-4 shadow-lg lg:shadow-none z-10`}
+      >
+        {["Product", "On Sale", "New Arrivals", "Brands"].map((link, index) => (
+          <Link
+            key={index}
+            to={`/${link.toLowerCase().replace(" ", "-")}`}
+            className="block text-gray-700 hover:text-gray-900 font-medium lg:inline lg:p-0 py-2 px-4"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            {link}
+          </Link>
+        ))}
+      </nav>
+
+      {/* Right Section: Icons */}
+      <div className="flex items-center space-x-4">
+        {/* Search Icon and Input */}
+        <div className="relative">
+          <button
+            onClick={toggleSearch}
+            className="text-gray-600 hover:text-gray-900 focus:outline-none"
+          >
+            <AiOutlineSearch className="h-6 w-6" />
+          </button>
+          {isSearchOpen && (
+            <input
+              type="text"
+              placeholder="Search for products..."
+              className="absolute top-12 lg:top-0 left-0 lg:left-auto lg:relative px-4 py-2 bg-gray-100 rounded-3xl border border-gray-300 focus:outline-none focus:ring focus:ring-gray-500 w-64 lg:w-96 transition-all duration-300"
+            />
+          )}
+        </div>
+
+        {/* Cart Icon */}
+        <button className="text-gray-600 hover:text-gray-900 focus:outline-none">
+          <IoCartOutline className="h-6 w-6" />
+        </button>
+
+        {/* User Icon */}
+        <button className="text-gray-600 hover:text-gray-900 focus:outline-none">
+          <AiOutlineUser className="h-6 w-6" />
+        </button>
+      </div>
+    </header>
+  </div>
   );
 }
