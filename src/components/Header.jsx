@@ -45,7 +45,7 @@ export default function Header() {
             className="hover:text-gray-900 p-2 lg:p-0"
             onClick={() => setIsMenuOpen(false)}
           >
-            Shop
+            Product
           </Link>
           <Link
             to="/on-sale"
