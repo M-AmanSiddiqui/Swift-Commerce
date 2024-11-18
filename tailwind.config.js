@@ -4,6 +4,9 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+
+     
+
       colors: {
         customGray: '#F0F0F0',
         customGrayDark: '#9A9A9A',
