@@ -63,7 +63,7 @@ export default function Header() {
         <div className="relative">
           <button
             onClick={toggleSearch}
-            className="text-gray-600 hover:text-gray-900 focus:outline-none"
+            className="text-gray-600 hover:text-gray-900 mt-2 focus:outline-none"
           >
             <AiOutlineSearch className="h-6 w-6" />
           </button>

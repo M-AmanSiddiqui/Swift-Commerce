@@ -27,11 +27,11 @@ export default function FeaturesSection() {
   </div>
 
   {/* Product Cards */}
-  <div className="pl-4 pr-4 lg:pl-14 lg:pr-14 mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+  <div className="pl-4  pr-4 lg:pl-14 lg:pr-14 mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-72 ml-10">
     {TopSellingProducts.slice(0, 5).map((product) => (
       <div
         key={product.id}
-        className="bg-white shadow-lg rounded-lg overflow-hidden border hover:shadow-xl transition-shadow"
+        className="bg-customGray w-64  shadow-lg rounded-lg overflow-hidden border hover:shadow-xl transition-shadow"
       >
         <img
           className="w-full h-48 object-cover"
@@ -65,29 +65,31 @@ export default function FeaturesSection() {
 
   {/* Top Selling */}
   <div>
-    <h1 className="text-3xl lg:text-4xl font-extrabold text-center">TOP SELLING</h1>
-    <div className="pl-4 pr-4 lg:pl-14 lg:pr-14 mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-      {TopSellingProducts.slice(0, 5).map((product) => (
-        <div
-          key={product.id}
-          className="bg-white shadow-lg rounded-lg overflow-hidden border hover:shadow-xl transition-shadow"
-        >
-          <img
-            className="w-full h-48 object-cover"
-            src={`assets/${product.images[0]}`}
-            alt={product.title}
-          />
-          <div className="p-4">
-            <h2 className="text-lg text-gray-800 font-bold mt-2">{product.title}</h2>
-            <p className="text-sm text-gray-500">{product.subCategory}</p>
-            <div className="flex justify-between items-center mt-4">
-              <span className="text-lg font-bold text-indigo-600">₹{product.price}</span>
-              <span className="text-sm text-gray-500">({product.reviews} reviews)</span>
-            </div>
+    <h1 className="text-3xl lg:text-4xl font-extrabold text-center">NEW ARRIVAL</h1>
+  </div>
+
+  {/* Product Cards */}
+  <div className="pl-4  pr-4 lg:pl-14 lg:pr-14 mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-72 ml-10">
+    {TopSellingProducts.slice(0, 5).map((product) => (
+      <div
+        key={product.id}
+        className="bg-customGray w-64  shadow-lg rounded-lg overflow-hidden border hover:shadow-xl transition-shadow"
+      >
+        <img
+          className="w-full h-48 object-cover"
+          src={`assets/${product.images[0]}`}
+          alt={product.title}
+        />
+        <div className="p-4">
+          <h2 className="text-lg text-gray-800 font-bold mt-2">{product.title}</h2>
+          <p className="text-sm text-gray-500">{product.subCategory}</p>
+          <div className="flex justify-between items-center mt-4">
+            <span className="text-lg font-bold text-indigo-600">₹{product.price}</span>
+            <span className="text-sm text-gray-500">({product.reviews} reviews)</span>
           </div>
         </div>
-      ))}
-    </div>
+      </div>
+    ))}
   </div>
 
   {/* View All Button */}
@@ -108,12 +110,12 @@ export default function FeaturesSection() {
 
     <div className="flex flex-wrap justify-center gap-4 p-5 mt-4">
       <img
-        className="w-full sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 object-cover rounded-lg"
+        className="rounded-lg"
         src={CasualPic}
         alt="Casual"
       />
       <img
-        className="w-full sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 object-cover rounded-lg"
+        className=" rounded-lg"
         src={FormalPic}
         alt="Formal"
       />
@@ -121,12 +123,12 @@ export default function FeaturesSection() {
 
     <div className="flex flex-wrap justify-center gap-4 mt-4">
       <img
-        className="w-full sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 object-cover rounded-lg"
+        className="rounded-lg"
         src={PartyPic}
         alt="Party"
       />
       <img
-        className="w-full sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 object-cover rounded-lg"
+        className="rounded-lg"
         src={GymPic}
         alt="Gym"
       />

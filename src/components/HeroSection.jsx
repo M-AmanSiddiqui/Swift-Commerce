@@ -64,12 +64,12 @@ export default function HeroSection() {
     </div>
   
     {/* Brand Logos */}
-    <div className="bg-black w-full mt-20 flex flex-wrap justify-center gap-8 sm:gap-12 lg:gap-24 p-6 lg:p-8">
-      <img className="w-12 sm:w-16 lg:w-20" src={VERSAGE} alt="VERSAGE" />
-      <img className="w-12 sm:w-16 lg:w-20" src={ZARA} alt="ZARA" />
-      <img className="w-12 sm:w-16 lg:w-20" src={GUCCI} alt="GUCCI" />
-      <img className="w-12 sm:w-16 lg:w-20" src={PRADA} alt="PRADA" />
-      <img className="w-12 sm:w-16 lg:w-20" src={Calvin} alt="Calvin Klein" />
+    <div className="bg-black w-full mt-20 flex flex-wrap justify-center gap-8 sm:gap-12 lg:gap-24  p-6 lg:p-8">
+      <img className="w-12 sm:w-16 lg:w-36" src={VERSAGE} alt="VERSAGE" />
+      <img className="w-12 sm:w-16 lg:w-36" src={ZARA} alt="ZARA" />
+      <img className="w-12 sm:w-16 lg:w-36" src={GUCCI} alt="GUCCI" />
+      <img className="w-12 sm:w-16 lg:w-36" src={PRADA} alt="PRADA" />
+      <img className="w-12 sm:w-16 lg:w-36" src={Calvin} alt="Calvin Klein" />
     </div>
   </div>
   

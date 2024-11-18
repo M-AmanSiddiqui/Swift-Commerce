@@ -9,7 +9,7 @@ export default function HomePage() {
   return (
     <div>
       <Navbar />
-      <Header />
+      <Header bgColor="bg-gray-200"/>
       <HeroSection />
       <FeaturesSection />
       <Testimonials />

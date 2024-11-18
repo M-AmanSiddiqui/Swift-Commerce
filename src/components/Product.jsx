@@ -1,12 +1,17 @@
 import React from "react";
 import ProductData from "./ProductsData";
+import Navbar from "./Navbar";
+import Header from "./Header";
 const ProductList = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
+<div>  
+  <Navbar />
+  <Header  />
+    <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
       {ProductData.map((product) => (
         <div
           key={product.id}
-          className="bg-white shadow-lg rounded-lg overflow-hidden border hover:shadow-xl transition-shadow"
+          className="bg-customGray shadow-lg rounded-lg overflow-hidden border hover:shadow-xl transition-shadow"
         >
           <img
             className="w-full h-48 object-cover"
@@ -26,7 +31,8 @@ const ProductList = () => {
           </div>
         </div>
       ))}
-    </div>
+    </div></div>
+
   );
 };
 
