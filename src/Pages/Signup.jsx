@@ -12,8 +12,15 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 
+import  { useContext, useEffect } from 'react';
+import {  useNavigate } from 'react-router-dom'; // Import useNavigate
+import { AuthContext } from '../context/AuthContext';
 import ForgotPassword from './ForgotPassword';
 import { GoogleIcon, FacebookIcon, SitemarkIcon } from './CustomIcons';
+import { GoogleAuthProvider, signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../Utils/firebase';
+import { signInWithPopup } from 'firebase/auth';
+
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: 'flex',
@@ -34,7 +41,54 @@ const Card = styled(MuiCard)(({ theme }) => ({
 }));
 
 export default function SignInCard() {
-  const [emailError, setEmailError] = useState(false);
+
+const handleSignInwithGoogle = ()=>{
+  const provider = new GoogleAuthProvider();
+  provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+  signInWithPopup(auth, provider)
+  .then((result) => {
+    console.log("result",result);
+    
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+    
+    console.log("User",user);
+    // IdP data available using getAdditionalUserInfo(result)
+    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.customData.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    console.log("error",errorCode,errorMessage);
+    
+    // ...
+  });
+const createUserWithEmailAndPassword=()=>{
+  createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+}
+
+}
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const [emailError, setEmailError] = useState();
+  
   const [emailErrorMessage, setEmailErrorMessage] = useState('');
   const [passwordError, setPasswordError] = useState(false);
   const [passwordErrorMessage, setPasswordErrorMessage] = useState('');
@@ -59,6 +113,16 @@ export default function SignInCard() {
       password: data.get('password'),
     });
   };
+
+  const { user, setUser } = useContext(AuthContext);
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  // Redirect to Home page if user is logged in
+  useEffect(() => {
+    if (user.isLogin) {
+      navigate('/'); // Redirect to home page (or any page you'd like)
+    }
+  }, [user.isLogin, navigate]); // Dependency array ensures this runs when `user.isLogin` changes
 
   const validateInputs = () => {
     const email = document.getElementById('email');
@@ -87,6 +151,7 @@ export default function SignInCard() {
     return isValid;
   };
 
+  
   return (
     <Box
       sx={{
@@ -123,6 +188,8 @@ export default function SignInCard() {
               error={emailError}
               helperText={emailErrorMessage}
               id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               type="email"
               name="email"
               placeholder="your@email.com"
@@ -153,6 +220,8 @@ export default function SignInCard() {
               name="password"
               placeholder="••••••"
               type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               id="password"
               autoComplete="current-password"
               autoFocus
@@ -176,7 +245,7 @@ export default function SignInCard() {
           <Button
             fullWidth
             variant="outlined"
-            onClick={() => alert('Sign in with Google')}
+            onClick={handleSignInwithGoogle}
             startIcon={<GoogleIcon />}
           >
             Sign in with Google

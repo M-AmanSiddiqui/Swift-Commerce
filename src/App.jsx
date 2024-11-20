@@ -4,6 +4,7 @@ import HomePage from "./Pages/HomePage";
 import Signup from "./Pages/Signup";
 import ProductList from "./components/Product";
 import ProductsDetail from "./Pages/ProductsDetail";
+import AdminDashboard from "./Pages/AdminDashboard";
 export default function App() {
   return (
    
@@ -12,6 +13,7 @@ export default function App() {
       <Route path="/signup" element={<Signup />} />
       <Route path="/product" element={<ProductList />} />
       <Route path="/product/:id" element={<ProductsDetail />} />
+      <Route path="admindashboard" element={<AdminDashboard />}/>
       </Routes>
    
   );

@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { IoCartOutline } from "react-icons/io5";
 import { AiOutlineMenu, AiOutlineClose, AiOutlineSearch, AiOutlineUser } from "react-icons/ai";
 
+
 export default function Header() {
+
+  
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
@@ -57,7 +60,7 @@ export default function Header() {
               <input
                 type="text"
                 placeholder="Search for products..."
-                className="mt-2 px-4 py-2 bg-gray-100 rounded-3xl border border-gray-300 focus:outline-none focus:ring focus:ring-gray-500 w-full lg:w-96 transition-all duration-300"
+                className="mt-2 px-4 py-2 bg-gray-100 rounded-3xl border border-gray-300 focus:outline-none focus:ring focus:ring-gray-500 w-fullnpm run dev lg:w-96 transition-all duration-300"
               />
             )}
           </div>

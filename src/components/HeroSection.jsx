@@ -41,7 +41,7 @@ export default function HeroSection() {
           THAT MATCHES <br />
           YOUR STYLE
         </h1>
-        <p className="text-customGrayDark mt-4 text-sm sm:text-base lg:text-lg text-center sm:text-left sm:pl-4 lg:pl-4">
+        <p className="text-black mt-4 text-sm sm:text-base lg:text-lg text-center sm:text-left sm:pl-4 lg:pl-4">
           Browse through our diverse range of meticulously crafted garments, designed <br className="hidden sm:block" />
           to bring out your individuality and cater to your sense of style.
         </p>

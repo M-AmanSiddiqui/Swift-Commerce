@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";  // Don't forget to import Link
 import ProductData from "./ProductsData";
 import Navbar from "./Navbar";
 import Header from "./Header";
+import Footer from "./Footer";
 
 const ProductList = () => {
   return (
@@ -36,6 +37,7 @@ const ProductList = () => {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 };
