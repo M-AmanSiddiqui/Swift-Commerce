@@ -70,17 +70,19 @@ const handleSignInwithGoogle = ()=>{
     
     // ...
   });
-const createUserWithEmailAndPassword=()=>{
-  createUserWithEmailAndPassword(auth, email, password)
+const signInWithEmailAndPassword=()=>{
+  signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed up 
     const user = userCredential.user;
-    // ...
+    console.log("User",user);
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    // ..
+    console.log("errorCode",errorCode);
+  
+    console.log("errorMessage",errorMessage);
   });
 }
 
@@ -129,6 +131,7 @@ const createUserWithEmailAndPassword=()=>{
     const password = document.getElementById('password');
 
     let isValid = true;
+    
 
     if (!email.value || !/\S+@\S+\.\S+/.test(email.value)) {
       setEmailError(true);
@@ -236,7 +239,7 @@ const createUserWithEmailAndPassword=()=>{
             label="Remember me"
           />
           <ForgotPassword open={open} handleClose={handleClose} />
-          <Button type="submit" fullWidth variant="contained" onClick={validateInputs}>
+          <Button type="submit" fullWidth variant="contained" onClick={signInWithEmailAndPassword}>
             Sign in
           </Button>
         </Box>
