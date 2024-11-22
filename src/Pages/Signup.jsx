@@ -70,21 +70,7 @@ const handleSignInwithGoogle = ()=>{
     
     // ...
   });
-const signInWithEmailAndPassword=()=>{
-  signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed up 
-    const user = userCredential.user;
-    console.log("User",user);
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    console.log("errorCode",errorCode);
-  
-    console.log("errorMessage",errorMessage);
-  });
-}
+
 
 }
   const [email, setEmail] = useState();
@@ -239,7 +225,7 @@ const signInWithEmailAndPassword=()=>{
             label="Remember me"
           />
           <ForgotPassword open={open} handleClose={handleClose} />
-          <Button type="submit" fullWidth variant="contained" onClick={signInWithEmailAndPassword}>
+          <Button type="submit" fullWidth variant="contained" onClick={validateInputs}>
             Sign in
           </Button>
         </Box>
